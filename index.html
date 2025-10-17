@@ -30,6 +30,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Philosopher:400,400italic,700,700italic" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+	<!-- Library - Font Awesome Icons (CDN for latest version) -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 	<!-- Library - Bootstrap v3.3.5 -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -129,6 +131,7 @@
 				display: block;
 			}
 		}
+
 	</style>
 
 	<!--[if IE]>
@@ -138,6 +141,8 @@
 	<!-- Custom - Theme CSS -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/shortcodes.css">
+	<!-- Chatbot Styles (light mode) -->
+	<link rel="stylesheet" type="text/css" href="css/chatbot.css">
 	
 	
 
@@ -241,7 +246,7 @@
 									<span>Brighter Tomorrows Start Here</span>
 									<h3>WE CARE FOR YOUR FUTURE</h3>
 									<p>Compassionate experts, transformative care. Discover hope and healing, together.</p>
-									<a href="#">View Our Services<i class="fa fa-plus"></i></a>
+									<a href="#what-we-do-best">View Our Services<i class="fa fa-plus"></i></a>
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-6 no-padding">
@@ -253,10 +258,10 @@
 						<div class="item">
 							<div class="col-md-6 col-sm-6 no-padding">
 								<div class="banner-left">
-									<span>The Best Hospitality WP Theme Forever!</span>
+									<span>Brighter Tomorrows Start Here</span>
 									<h3>we care for your health</h3>
 									<p>Qualified Staff With Expertise in Services We Offer for more Resonable cost with love, Just explore about More!</p>
-									<a href="#">View Our Services<i class="fa fa-plus"></i></a>
+									<a href="#what-we-do-best">View Our Services<i class="fa fa-plus"></i></a>
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-6 no-padding">
@@ -305,6 +310,29 @@
 				</div>
 			</div><!-- Shape /- -->
 		</div><!-- Banner Section /- -->
+
+		<!-- Chatbot Widget -->
+		<div id="chatbot-button" aria-label="Open chat" aria-pressed="false" title="Chat">
+			<!-- Outline chat icon -->
+			<svg class="icon-chat" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+				<path d="M21 12c0 3.866-3.806 7-8.5 7-1.1 0-2.15-.17-3.11-.48L4 20l1.7-3.04C4.64 15.78 4 13.96 4 12c0-3.866 3.806-7 8.5-7S21 8.134 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+			<!-- Outline close (X) icon -->
+			<svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+				<path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</div>
+		<div id="chatbot-window" aria-live="polite" aria-hidden="true">
+			<div class="chatbot-header">
+				<span class="chatbot-title">TNKL Assistant</span>
+				<button id="chatbot-close" aria-label="Close chat">✕</button>
+			</div>
+			<div id="chatbot-messages" class="chatbot-messages"></div>
+			<form id="chatbot-form" class="chatbot-input" autocomplete="off">
+				<input id="chatbot-input" type="text" placeholder="Type a message..." aria-label="Message" />
+				<button type="submit" aria-label="Send">Send</button>
+			</form>
+		</div>
 
 		<!-- Message Borad -->
 		<div id="message-borad" class="container-fluid no-padding message-borad">
@@ -462,11 +490,11 @@
 			<div class="container">
 				<div class="call-out-content row">
 					<div class="col-md-10 col-sm-9 col-xs-12">
-						<h3>Are You Ready to <span>Buy this theme!</span></h3>
-						<p>Blanditiis praesentium voluptatum deleniti atque  soluta nobis est eligendi optio cumque nihil.</p>
+						<h3>Are You Ready to <span>Take the Next Step?</span></h3>
+						<p>Reach out today for compassionate care, support, and rehabilitation services at Tahanan ng Kabataan ng Laguna.</p>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-12">
-						<a href="#" title="Purchase Now">Purchase Now</a>
+						<a href="#service-section" title="Book Now">BOOK AN APPOINTMENT</a>
 					</div>
 				</div>
 			</div><!-- Container /- -->
@@ -484,9 +512,9 @@
 					<div class="what-we-do-block">					
 						<img src="images/what-we-do-best-block-bg.jpg" alt="what-we-do-best">
 						<div class="what-we-do-block-content">
-							<i><img src="images/pulmonary.png" alt="pulmonary"></i>
-							<h5>Pulmonary</h5>
-							<p>Nam libero tempore cumas soluta eligendi </p>
+							<i class="fa-regular fa-circle-user icon-service"></i>
+							<h5>Socio-Cultural</h5>
+							<p>Builds social awareness and involvement.</p>
 						</div>
 					</div>
 				</div>
@@ -494,9 +522,9 @@
 					<div class="what-we-do-block">					
 						<img src="images/what-we-do-best-block-bg.jpg" alt="what-we-do-best">
 						<div class="what-we-do-block-content">
-							<i><img src="images/cardiology.png" alt="Cardiology"></i>
-							<h5>Cardiology</h5>
-							<p>Nam libero tempore cumas soluta eligendi </p>
+							<i class="fa-regular fa-lightbulb icon-service"></i>
+							<h5>Psychological</h5>
+							<p>Provides counseling and mental health support.</p>
 						</div>
 					</div>
 				</div>
@@ -504,9 +532,9 @@
 					<div class="what-we-do-block">					
 						<img src="images/what-we-do-best-block-bg.jpg" alt="what-we-do-best">
 						<div class="what-we-do-block-content">
-							<i><img src="images/traumatology.png" alt="Traumatology"></i>
-							<h5>Traumatology</h5>
-							<p>Nam libero tempore cumas soluta eligendi </p>
+							<i class="fa-regular fa-bookmark icon-service"></i>
+							<h5>Educational</h5>
+							<p>Offers learning sessions and academic support.</p>
 						</div>
 					</div>
 				</div>
@@ -514,9 +542,9 @@
 					<div class="what-we-do-block">					
 						<img src="images/what-we-do-best-block-bg.jpg" alt="what-we-do-best">
 						<div class="what-we-do-block-content">
-							<i><img src="images/neurology.png" alt="Neurology"></i>
-							<h5>Neurology</h5>
-							<p>Nam libero tempore cumas soluta eligendi </p>
+							<i class="fa-regular fa-handshake icon-service"></i>
+							<h5>Vocational/Livelihood</h5>
+							<p>Trains residents in skills for future employment.</p>
 						</div>
 					</div>
 				</div>
@@ -524,8 +552,8 @@
 					<div class="what-we-do-block">
 						<img src="images/what-we-do-best-block-title-bg.jpg" alt="what-we-do-best-title">
 						<div class="what-we-do-block-content">
-							<h3>What we do best</h3>					
-							<p>Dolor sit amet consecdi pisicing eliam sedo</p>
+							<h3>Programs</h3>					
+							<p>Provides structured activities for recovery and growth.</p>
 							<span><img src="images/add2.png" alt="section-seprator"></span>
 						</div>
 					</div>
@@ -534,9 +562,9 @@
 					<div class="what-we-do-block">					
 						<img src="images/what-we-do-best-block-bg.jpg" alt="what-we-do-best">
 						<div class="what-we-do-block-content">
-							<i><img src="images/x-ray.png" alt="X-ray"></i>
-							<h5>X-ray</h5>
-							<p>Nam libero tempore cumas soluta eligendi </p>
+							<i class="fa-regular fa-star icon-service"></i>
+							<h5>Religious & Spiritual</h5>
+							<p>Encourages faith and moral development.</p>
 						</div>
 					</div>
 				</div>
@@ -544,9 +572,19 @@
 					<div class="what-we-do-block">					
 						<img src="images/what-we-do-best-block-bg.jpg" alt="what-we-do-best">
 						<div class="what-we-do-block-content">
-							<i><img src="images/nuclear-magnetic.png" alt="Nuclear magnetic"></i>
-							<h5>Nuclear magnetic</h5>
-							<p>Nam libero tempore cumas soluta eligendi </p>
+							<i class="fa-regular fa-hospital icon-service"></i>
+							<h5>Medical & Dental</h5>
+							<p>Ensures regular health and dental checkups.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-6 no-padding what-we-do-title">
+					<div class="what-we-do-block">
+						<img src="images/what-we-do-best-block-title-bg.jpg" alt="what-we-do-best-title">
+						<div class="what-we-do-block-content">	
+							<h3>Services</h3>					
+							<p>Delivers essential care and rehabilitation support.</p>
+							<span><img src="images/add2.png" alt="section-seprator"></span>
 						</div>
 					</div>
 				</div>
@@ -554,9 +592,9 @@
 					<div class="what-we-do-block">					
 						<img src="images/what-we-do-best-block-bg.jpg" alt="what-we-do-best">
 						<div class="what-we-do-block-content">
-							<i><img src="images/diagnostic.png" alt="Diagnostic"></i>
-							<h5>Diagnostic</h5>
-							<p>Nam libero tempore cumas soluta eligendi </p>
+							<i class="fa-regular fa-comments icon-service"></i>
+							<h5>Individual & Family Counseling</h5>
+							<p>Supports healing through guided therapy sessions.</p>
 						</div>
 					</div>
 				</div>
@@ -564,9 +602,29 @@
 					<div class="what-we-do-block">					
 						<img src="images/what-we-do-best-block-bg.jpg" alt="what-we-do-best">
 						<div class="what-we-do-block-content">
-							<i><img src="images/blood-test.png" alt="Blood test"></i>
-							<h5>Blood test</h5>
-							<p>Nam libero tempore cumas soluta eligendi </p>
+							<i class="fa-regular fa-building icon-service"></i>
+							<h5>Home Visitation</h5>
+							<p>Monitors and assists clients after discharge.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-6 no-padding">
+					<div class="what-we-do-block">					
+						<img src="images/what-we-do-best-block-bg.jpg" alt="what-we-do-best">
+						<div class="what-we-do-block-content">
+							<i class="fa-regular fa-face-smile icon-service"></i>
+							<h5>Homelife</h5>
+							<p>Builds discipline through daily living routines.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-6 no-padding">
+					<div class="what-we-do-block">					
+						<img src="images/what-we-do-best-block-bg.jpg" alt="what-we-do-best">
+						<div class="what-we-do-block-content">
+							<i class="fa-regular fa-futbol icon-service"></i>
+							<h5>Sports & Recreational</h5>
+							<p>Promotes wellness through physical activities.</p>
 						</div>
 					</div>
 				</div>
@@ -788,7 +846,7 @@
 					<!-- Happy Customer -->
 					<div class="happy-customer">
 						<h3 class="block-title">Happy Customers</h3>
-						<p>Powered by over <span>4,000</span> Patients trust us with their sweet love.</p>
+						<p>Powered by over <span>2,000</span> Patients trust us with their sweet love.</p>
 						<a href="#service-section"><i class="fa fa-thumbs-o-up"></i>Join Us now</a>
 					</div><!-- Happy Customer /- -->
 				</div>		
@@ -817,7 +875,7 @@
 							<div class="statistics-box">
 								<i class="statistics-icon"><img alt="statistics-icon" src="images/icon-3.png"></i>
 								<div class="statistics-content">
-									<span data-statistics_percent="4200" id="statistics_count-3">4200</span>
+									<span data-statistics_percent="2389" id="statistics_count-3">2389</span>
 									<p>Satisfied Patients</p>
 								</div>						
 							</div>						
@@ -921,18 +979,16 @@
 						<aside class="widget widget-links">
 							<h3 class="widget-title">Our Services</h3>
 							<ul>
-								<li><a href="#" title="Births">Births</a></li>
-								<li><a href="#" title="Dental">Dental</a></li>
-								<li><a href="#" title="Pulmonary">Pulmonary</a></li>
-								<li><a href="#" title="Nuclear magnetic">Nuclear magnetic</a></li>
-								<li><a href="#" title="Cardiology">Cardiology</a></li>
-								<li><a href="#" title="Pregnancy">Pregnancy</a></li>
-								<li><a href="#" title="Neurology">Neurology</a></li>
-								<li><a href="#" title="For disabled">For disabled</a></li>
-								<li><a href="#" title="Traumatology">Traumatology</a></li>
-								<li><a href="#" title="X-ray">X-ray</a></li>
-								<li><a href="#" title="Neurology">Neurology</a></li>
-								<li><a href="#" title="Prostheses">Prosthese</a></li>
+								<li><a href="#" title="Births">Socio-Cultural</a></li>
+								<li><a href="#" title="Dental">Psychological</a></li>
+								<li><a href="#" title="Pulmonary">Educational</a></li>
+								<li><a href="#" title="Nuclear magnetic">Vocational/Livelihood</a></li>
+								<li><a href="#" title="Cardiology">Religious & Spiritual</a></li>
+								<li><a href="#" title="Pregnancy">Medical & Dental</a></li>
+								<li><a href="#" title="Neurology">Individual & Family Counseling</a></li>
+								<li><a href="#" title="For disabled">Home Visitation</a></li>
+								<li><a href="#" title="Traumatology">Homelife</a></li>
+								<li><a href="#" title="X-ray">Sports & Recreational</a></li>
 							</ul>
 						</aside>
 					</div>
@@ -997,6 +1053,8 @@
 	
 	<!-- Library - Theme JS -->
 	<script src="js/functions.js"></script>
+	<!-- Chatbot Logic (light mode) -->
+	<script src="js/chatbot.js"></script>
 
 	<script>
 		// Handle active states on scroll
@@ -1034,7 +1092,7 @@
 					this.parentElement.classList.add('active');
 				});
 			});
-			
+		
 			window.addEventListener('scroll', makeActive);
 			makeActive(); // Initial check
 		});

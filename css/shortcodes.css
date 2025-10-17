@@ -582,6 +582,7 @@
 	letter-spacing: 1px;
 	line-height: 10px;
 	display: inline-block;
+	white-space: nowrap;
 }
 .call-out-content a:hover {
 	background-color: #fff;
@@ -592,10 +593,20 @@
 /* -- What We Do Best */
 .what-we-do-best {
 	text-align: center;
+	display: flex;
+	align-items: stretch;
 }
 .what-we-do-left {
 	position: relative;
 	width: 34.75%;
+	display: flex;
+	align-items: stretch;
+}
+.what-we-do-left img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
 }
 .what-we-do-best-left::before {
 	position: absolute;
@@ -609,6 +620,8 @@
 }
 .what-we-do-right {
 	width: 65.25%;
+	display: flex;
+	flex-wrap: wrap;
 } 
 .what-we-do-block {
 	background-color: #f9fcff;		
@@ -660,6 +673,35 @@
 	transform: translate(0%, -50%);
 	z-index: 1;
 	padding: 0 10px;
+}
+.what-we-do-block-content i.icon-service {
+	display: block;
+	margin: 0 auto 15px;
+	z-index: 1;
+	font-size: 36px;
+	color: #6b46c1;
+	position: relative;
+	width: auto;
+	height: auto;
+	overflow: visible;
+	transition: color 0.3s ease;
+	font-weight: 300;
+}
+.what-we-do-block-content i.icon-service.fa-solid {
+	font-weight: 100;
+	/* Create a thinner, outlined look for solid icons */
+	color: transparent;
+	-webkit-text-stroke: 1.2px #6b46c1;
+	text-stroke: 1.2px #6b46c1; /* for future-compatible browsers */
+}
+.what-we-do-block:hover i.icon-service {
+	color: #fff;
+}
+.what-we-do-block:hover i.icon-service.fa-solid {
+	/* Keep the outline effect on hover but switch to white */
+	-webkit-text-stroke-color: #fff;
+	text-stroke-color: #fff;
+	color: transparent;
 }
 .what-we-do-block-content i {
 	display: block;
